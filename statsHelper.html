@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			addEventListener("keyup", function(event) {
+				if (event.keyCode === 13) {
+					event.preventDefault();
+					document.getElementById("buton").click();
+				}
+			});
+			function myFunction() {
+				var separator = document.getElementById("separator").value;
+				var frequency = document.getElementById("frequency").value;
+				var number = document.getElementById("number").value;
+				for (var i = 0; i<frequency; i++) {
+					document.getElementById("output").innerHTML += number + separator
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p>Separator:</p>
+		<input id="separator" value=", ">
+		<p>Frequency:</p>
+		<input id="frequency" value="2">
+		<p>Number:</p>
+		<input id="number" value="Repeat">
+		<br><br>
+		<button id="buton" type="button" onclick="myFunction()">More</button>
+		<p id="output"></p>
+	</body>
+</html>
